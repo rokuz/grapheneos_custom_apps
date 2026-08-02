@@ -1,0 +1,23 @@
+android_app_import {
+    name: "LibrePods",
+
+    apk: "prebuilt/LibrePods.apk",
+
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+
+    required: ["privapp_whitelist_me.kavishdevar.librepods"],
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_me.kavishdevar.librepods",
+    system_ext_specific: true,
+    sub_dir: "permissions",
+    src: "privapp-permissions-librepods.xml",
+    filename_from_src: true,
+}
